@@ -18,7 +18,9 @@ with open("tools.py", 'wb') as f:
     f.write(r.content)
 print("finished downloading tools.py")
 print(Fore.GREEN + "you now have the newest version of Kali Tools!")
+print('please restart the script for updates to apply')
 time.sleep(0.5)
+
 
 
 
