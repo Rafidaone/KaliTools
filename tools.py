@@ -80,8 +80,7 @@ while True:
 	time.sleep(0.5)
 	print('opening the update script')
 	exec(open("update.py").read())
-
-
+	break
 
 
 
