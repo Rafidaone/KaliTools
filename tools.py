@@ -10,23 +10,31 @@ print(Fore.BLUE + 'code by RafiDEV more at rafidev.net' + Style.RESET_ALL)
 
 
 #cheks what os is the script ran in
+
 if platform == "linux" or platform == "linux2":
 #cheks if ran as root
 	if os.geteuid() != 0:
-		
+
 		print(Fore.RED + 'warning not runing as root!')
 		print(Style.RESET_ALL)
+
 if platform == "darwin":
 	print('this script might have problems running on macos')
 elif platform == "win32":
+
 	print(Fore.RED + 'this script isent made for windows and most functions wont work!')
+
+v = 1
+
 
 #this is the main menu
 while True:
-	
-	print('_________________________')
+
+	print('______________________________________')
 	print(Fore.GREEN + '-$$$$-  main menu  -$$$$-')
 	print(Style.RESET_ALL)
+	print(Fore.MAGENTA + 'version: ' + str(v))
+	print(Style.RESET_ALL + '--------------------------------------')
 	print('0 | exit')
 	print('--|------')
 	print('1 | update')
@@ -36,14 +44,20 @@ while True:
 	print('3 | tshark')
 	print('--|------')
 	print("4 | drive")
-	print('----------------')
+	print("--|------")
+	print('5 | put device into monitore mode')
+	print("--|------")
+	print('6 | put device into managed mode')
+	print("--|------")
+	print('7 | chat spam bot       (you need a gui)')
+	print('--------------------------------------')
 	# the actual typing thing
 	print(Fore.GREEN + '┌──(' + Fore.BLUE +'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
 	guy = input('└─' + Fore.BLUE + '$ ' + Fore.GREEN)
 
 
 #             the optinas/command start
-	
+
 
 
 #      exit
@@ -58,29 +72,29 @@ while True:
 
 
 # updating
-
-	print(Fore.LIGHTBLUE_EX + "updating update.py")
+	if guy == '1':
+		print(Fore.LIGHTBLUE_EX + "updating update.py")
 	# this is to cheak if there is a file tools.py so it wont error out if there is no spam-bot.py file in the folder
 
-	if os.path.isfile('update.py'):
-		print("deleting update.py")
-		os.remove("update.py")
-		time.sleep(0.5)
+		if os.path.isfile('update.py'):
+			print("deleting update.py")
+			os.remove("update.py")
+			time.sleep(0.5)
 
-		print("deleted update.py")
-	# this is were it connects to my web site to get the newes vershion of spam-bot
-	image_url = "https://raw.githubusercontent.com/Rafidaone/KaliTools/main/update.py"
-	print("downloading the update script from " + image_url)
-	r = requests.get(image_url)
-	with open("update.py", 'wb') as f:
+			print("deleted update.py")
+			# this is were it connects to my web site to get the newes vershion of spam-bot
+			image_url = "https://raw.githubusercontent.com/Rafidaone/KaliTools/main/update.py"
+			print("downloading the update script from " + image_url)
+			r = requests.get(image_url)
+			with open("update.py", 'wb') as f:
 
-		f.write(r.content)
-	print("finished downloading update.py")
-	print(Fore.GREEN + "you now have the newest version of update script!")
-	time.sleep(0.5)
-	print('opening the update script')
-	exec(open("update.py").read())
-	break
+				f.write(r.content)
+				print("finished downloading update.py")
+				print(Fore.GREEN + "you now have the newest version of update script!")
+				time.sleep(0.5)
+				print('opening the update script')
+				exec(open("update.py").read())
+				break
 
 
 
@@ -107,11 +121,11 @@ while True:
 			else:
 				print(' please select "yes" or "no"')
 
-#	update
+#	tshark
 	if guy == '3':
-		print(Fore.RED + 'warning this only works on debian linux' + Style.RESET_ALL)
-		os.system('')
+		print('the dev did not add this to the script yet try updating if he added it')
 
+#    drive
 	if guy == '4':
 		print('this is the drive script were it makes lots of trash files')
 		print('would you like to make files or delete the files made?')
@@ -210,6 +224,68 @@ while True:
 			else:
 				print(Fore.RED + r + Fore.GREEN + ' is not on the menu, please select something from the menu' + Style.RESET_ALL)
 				time.sleep(1.5)
+
+
+#    put device into monitor mode
+	if guy == '6':
+		os.system('ifconfig')
+		print()
+		print('type the device to put into managed mode, example: wlan1mon')
+
+		print(Fore.GREEN + '┌──(' + Fore.BLUE + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
+		device = input('└─' + Fore.BLUE + '$ ' + Fore.GREEN)
+
+		os.system('airmon-ng stop ' + device)
+
+
+		#    put device into maneged mode
+	if guy == '5':
+
+			os.system('ifconfig')
+			print()
+			print('type the device to put into monitor mode, example: wlan1')
+
+			print(Fore.GREEN + '┌──(' + Fore.BLUE + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
+			device = input('└─' + Fore.BLUE + '$ ' + Fore.GREEN)
+
+			os.system('airmon-ng start ' + device)
+
+
+
+#   spam bot
+	if guy == '7':
+		import pyautogui
+
+		print(Fore.GREEN + 'type a word to spam to stop press ^C')
+
+		print(Fore.GREEN + '┌──(' + Fore.BLUE + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
+		word = input('└─' + Fore.BLUE + '$ ' + Fore.GREEN)
+		print('in 5 sec spam will begin')
+
+		time.sleep(1)
+		print('in 4 sec spam will begin')
+
+		time.sleep(1)
+		print('in 3 sec spam will begin')
+
+		time.sleep(1)
+		print('in 2 sec spam will begin')
+
+		time.sleep(1)
+		print('in 1 sec spam will begin')
+		time.sleep(1)
+
+		print('spamming ' + word)
+		t = 0
+		while True:
+			t = 1 + t
+			print("I have typed " + str(t) + ' words       press ^C to stop')
+			pyautogui.typewrite(word)
+			pyautogui.keyDown('enter')
+			pyautogui.keyUp('enter')
+
+
+
 
 	else:
 		print(Fore.RED + guy + Fore.GREEN + ' is not on the main menu' + Style.RESET_ALL)
