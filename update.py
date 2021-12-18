@@ -4,9 +4,6 @@ from colorama import Fore
 import time
 
 
-v = 1
-print(Fore.MAGENTA + 'version: ' + str(v)
-
 print(Fore.LIGHTBLUE_EX + "updating tools.py")
 #this is to cheak if there is a file tools.py so it wont error out if there is no spam-bot.py file in the folder
 if os.path.isfile('tools.py'):
