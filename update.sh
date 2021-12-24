@@ -17,6 +17,7 @@ sudo apt install hashcat -y
 
 rm tools.py
 wget https://raw.githubusercontent.com/Rafidaone/KaliTools/main/tools.py
-
+echo "---------------------------"
+echo "finished task now exiting"
 exit
 
