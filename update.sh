@@ -1,7 +1,7 @@
 #!/bin/bash
 
 clear
-echo "this is update / install script for KaliTools"
+echo "this is update / install script v1 for KaliTools"
 sleep 0.5
 echo ""
 read -p "press enter to start update/install press ^C to cancel"
