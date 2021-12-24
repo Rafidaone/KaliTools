@@ -1,6 +1,6 @@
 #!/bin/bash
 
-clear
+echo "----------------------------"
 echo "this is update / install script v1 for KaliTools"
 sleep 0.5
 echo ""
