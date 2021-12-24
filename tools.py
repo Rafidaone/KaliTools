@@ -93,6 +93,8 @@ while True:
                                 print("finished downloading update.sh")
                                 print(Fore.GREEN + "you now have the newest version of update script!")
                                 time.sleep(0.5)
+                                print("changing perms for update.sh to be able to exicute")
+                                os.system("chmod +x update.sh")
                                 print('opening the update script')
                                 os.system("sudo ./update.sh")
                                 break
