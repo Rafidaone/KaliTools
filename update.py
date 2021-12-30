@@ -2,7 +2,7 @@ import os
 import requests
 from colorama import Fore
 import time
-print("if you want to update please run the update coommand in tools.py")
+print("if you want to update please run the update command in tools.py")
 
 
 def update():
