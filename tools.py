@@ -5,6 +5,7 @@ from colorama import Fore, Style
 from sys import platform
 import time
 import subprocess
+import subprocess
 
 print(Fore.BLUE + 'code by RafiDEV more at rafidev.net' + Style.RESET_ALL)
 
@@ -14,14 +15,15 @@ print(Fore.BLUE + 'code by RafiDEV more at rafidev.net' + Style.RESET_ALL)
 if platform == "linux" or platform == "linux2":
 #cheks if ran as root
         if os.geteuid() != 0:
-
+                guyos = "Linux"
                 print(Fore.RED + 'warning not runing as root!')
                 print(Style.RESET_ALL)
 
 if platform == "darwin":
+        guyos = "Mac OS"
         print('this script might have problems running on macos')
 elif platform == "win32":
-
+        guyos = "Windows"
         print(Fore.RED + 'this script isent made for windows and most functions wont work!')
 
 v = 2
@@ -29,10 +31,11 @@ v = 2
 
 #this is the main menu
 while True:
-
+        
         print('______________________________________')
         print(Fore.GREEN + '-$$$$-  main menu  -$$$$-')
         print(Style.RESET_ALL)
+        print(Fore.LIGHTBLUE_EX + "os is " + guyos)
         print(Fore.MAGENTA + 'version: ' + str(v))
         print(Style.RESET_ALL + '--------------------------------------')
         print('0 | exit')
@@ -52,8 +55,8 @@ while True:
         print('7 | chat spam bot       (you need a gui)')
         print('--------------------------------------')
         # the actual typing thing
-        print(Fore.GREEN + '┌──(' + Fore.BLUE +'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
-        guy = input('└─' + Fore.BLUE + '$ ' + Fore.GREEN)
+        print(Fore.GREEN + '┌──(' + Fore.LIGHTBLUE_EX +'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
+        guy = input('└─' + Fore.LIGHTBLUE_EX + '$ ' + Fore.GREEN)
 
 
 #             the optinas/command start
@@ -62,14 +65,13 @@ while True:
 
 #      exit
         if guy == '0':
-                print('bye mate, see you soon')
                 break
 
         # tshark
         if guy == '3':
                 print('type filters to be applied')
-                print(Fore.GREEN + '┌──(' + Fore.BLUE +'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
-                f = input('└─' + Fore.BLUE + '$ ' + Fore.GREEN)
+                print(Fore.GREEN + '┌──(' + Fore.LIGHTBLUE_EX +'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
+                f = input('└─' + Fore.LIGHTBLUE_EX + '$ ' + Fore.GREEN)
                 os.system('sudo tshark ' + f)
 
 
@@ -78,25 +80,21 @@ while True:
                 print(Fore.LIGHTBLUE_EX + "updating update.py")
         # this is to cheak if there is a file tools.py so it wont error out if there is no spam-bot.py file in the folder
 
-                if os.path.isfile('update.sh'):
-                        print("deleting update.sh")
-                        os.remove("update.sh")
+                if os.path.isfile('update.py'):
+                        print("deleting update.py")
+                        os.remove("update.py")
 
-                        print("deleted update.sh")
+                        print("deleted update.py")
                         # this is were it connects to my gh to get the newes vershion of script
-                        image_url = "https://raw.githubusercontent.com/Rafidaone/KaliTools/main/update.sh"
+                        image_url = "https://raw.githubusercontent.com/Rafidaone/KaliTools/main/update.py"
                         print("downloading the update script from " + image_url)
                         r = requests.get(image_url)
-                        with open("update.sh", 'wb') as f:
+                        with open("update.py", 'wb') as f:
 
                                 f.write(r.content)
-                                print("finished downloading update.sh")
+                                print("finished downloading update.py")
                                 print(Fore.GREEN + "you now have the newest version of update script!")
-                                time.sleep(0.5)
-                                print("changing perms for update.sh to be able to exicute")
-                                os.system("chmod +x update.sh")
-                                print('opening the update script')
-                                os.system("sudo ./update.sh")
+                                print("please execute update.py to continue")
                                 break
 
 
@@ -108,14 +106,14 @@ while True:
 
                 while True:
 
-                        print(Fore.GREEN + '┌──(' + Fore.BLUE +'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
-                        r = input('└─' + Fore.BLUE + '$ ' + Fore.GREEN)
+                        print(Fore.GREEN + '┌──(' + Fore.LIGHTBLUE_EX +'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
+                        r = input('└─' + Fore.LIGHTBLUE_EX + '$ ' + Fore.GREEN)
 
                         if r == 'yes':
                                 print('type or past the directory of word list example: rockyou.txt or home/fold/file/rockyou.txt')
 
-                                print(Fore.GREEN + '┌──(' + Fore.BLUE +'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
-                                r = input('└─' + Fore.BLUE + '$ ' + Fore.GREEN)
+                                print(Fore.GREEN + '┌──(' + Fore.LIGHTBLUE_EX +'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
+                                r = input('└─' + Fore.LIGHTBLUE_EX + '$ ' + Fore.GREEN)
                                 os.system('sudo wifite -dict ' + r)
                                 break
                         if r == 'no':
@@ -144,15 +142,15 @@ while True:
                                 ---------
                                                 ''')
 
-                        print(Fore.GREEN + '┌──(' + Fore.BLUE + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
-                        r = input('└─' + Fore.BLUE + '$ ' + Fore.GREEN)
+                        print(Fore.GREEN + '┌──(' + Fore.LIGHTBLUE_EX + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
+                        r = input('└─' + Fore.LIGHTBLUE_EX + '$ ' + Fore.GREEN)
 
                         if r == '1':
                                 print('past or type the directory to delete files made')
                                 print('wen the console stops throwing up numbers at you its done!')
 
-                                print(Fore.GREEN + '┌──(' + Fore.BLUE + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
-                                d = input('└─' + Fore.BLUE + '$ ' + Fore.GREEN)
+                                print(Fore.GREEN + '┌──(' + Fore.LIGHTBLUE_EX + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
+                                d = input('└─' + Fore.LIGHTBLUE_EX + '$ ' + Fore.GREEN)
 
                                 n = 0
 
@@ -170,8 +168,8 @@ while True:
                                 print('past or type the directory to make the files')
 
 
-                                print(Fore.GREEN + '┌──(' + Fore.BLUE + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
-                                d = input('└─' + Fore.BLUE + '$ ' + Fore.GREEN)
+                                print(Fore.GREEN + '┌──(' + Fore.LIGHTBLUE_EX + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
+                                d = input('└─' + Fore.LIGHTBLUE_EX + '$ ' + Fore.GREEN)
 
                                 n = 0
 
@@ -235,8 +233,8 @@ while True:
                 print()
                 print('type the device to put into managed mode, example: wlan1mon')
 
-                print(Fore.GREEN + '┌──(' + Fore.BLUE + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
-                device = input('└─' + Fore.BLUE + '$ ' + Fore.GREEN)
+                print(Fore.GREEN + '┌──(' + Fore.LIGHTBLUE_EX + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
+                device = input('└─' + Fore.LIGHTBLUE_EX + '$ ' + Fore.GREEN)
 
                 os.system('airmon-ng stop ' + device)
 
@@ -248,8 +246,8 @@ while True:
                         print()
                         print('type the device to put into monitor mode, example: wlan1')
 
-                        print(Fore.GREEN + '┌──(' + Fore.BLUE + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
-                        device = input('└─' + Fore.BLUE + '$ ' + Fore.GREEN)
+                        print(Fore.GREEN + '┌──(' + Fore.LIGHTBLUE_EX + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
+                        device = input('└─' + Fore.LIGHTBLUE_EX + '$ ' + Fore.GREEN)
 
                         os.system('airmon-ng start ' + device)
 
@@ -261,8 +259,8 @@ while True:
 
                 print(Fore.GREEN + 'type a word to spam to stop press ^C')
 
-                print(Fore.GREEN + '┌──(' + Fore.BLUE + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
-                word = input('└─' + Fore.BLUE + '$ ' + Fore.GREEN)
+                print(Fore.GREEN + '┌──(' + Fore.LIGHTBLUE_EX + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
+                word = input('└─' + Fore.LIGHTBLUE_EX + '$ ' + Fore.GREEN)
                 print('in 5 sec spam will begin')
 
                 time.sleep(1)
@@ -291,6 +289,8 @@ while True:
 
 
         else:
+
                 print(Fore.RED + guy + Fore.GREEN + ' is not on the main menu' + Style.RESET_ALL)
                 time.sleep(2)
 #                      options/command end
+print(Fore.GREEN + "exiting script" + Style.RESET_ALL)
