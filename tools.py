@@ -5,7 +5,7 @@ from colorama import Fore, Style
 from sys import platform
 import time
 import subprocess
-import subprocess
+
 
 print(Fore.BLUE + 'code by RafiDEV more at rafidev.net' + Style.RESET_ALL)
 
@@ -31,7 +31,6 @@ v = 2
 
 #this is the main menu
 while True:
-        
         print('______________________________________')
         print(Fore.GREEN + '-$$$$-  main menu  -$$$$-')
         print(Style.RESET_ALL)
@@ -53,6 +52,8 @@ while True:
         print('6 | put device into managed mode')
         print("--|------")
         print('7 | chat spam bot       (you need a gui)')
+        print("--|------")
+        print("8 | decrypt wifi hand shake file")
         print('--------------------------------------')
         # the actual typing thing
         print(Fore.GREEN + '┌──(' + Fore.LIGHTBLUE_EX +'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
@@ -285,6 +286,19 @@ while True:
                         pyautogui.keyDown('enter')
                         pyautogui.keyUp('enter')
 
+
+#               decrypt hand shake
+        if guy == "8":
+                print("past the directory of hand shake file, example:   neighbors-wifi.cap school-wifi.pcap")
+                print("")
+                print(Fore.GREEN + '┌──(' + Fore.LIGHTBLUE_EX + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
+                hand = input('└─' + Fore.LIGHTBLUE_EX + '$ ' + Fore.GREEN)
+
+                print("past the directory of wordlist    ")
+                print("")
+                print(Fore.GREEN + '┌──(' + Fore.LIGHTBLUE_EX + 'HackerMan㉿Russia' + Fore.GREEN + ')-[~]')
+                list = input('└─' + Fore.LIGHTBLUE_EX + '$ ' + Fore.GREEN)
+                os.system("sudo aircrack-ng " + hand + " -w " + list)
 
 
 
