@@ -4,4 +4,4 @@ idc what you do with my code.
 
 the script is in early devlopment and some things dont work yet, on top of that it is made and maintand by a 12 year old child that is board after school
 
-this script works just fine on othere distros of linux you just need to install tools for now 
+if your using some other distro that might might not have all the softwear installed run [install.sh], that script wors with debien only 
