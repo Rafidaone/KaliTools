@@ -13,20 +13,21 @@ print(Fore.BLUE + 'code by RafiDEV more at rafidev.net' + Style.RESET_ALL)
 #cheks what os is the script ran in
 
 if platform == "linux" or platform == "linux2":
+        print("Linux")
 #cheks if ran as root
         if os.geteuid() != 0:
-                guyos = "Linux"
+
                 print(Fore.RED + 'warning not runing as root!')
                 print(Style.RESET_ALL)
 
 if platform == "darwin":
         guyos = "Mac OS"
-        print('this script might have problems running on macos')
+        print('this script might have problems running on MacOS')
 elif platform == "win32":
         guyos = "Windows"
         print(Fore.RED + 'this script isent made for windows and most functions wont work!')
 
-v = 2
+v = 3
 
 
 #this is the main menu
@@ -34,7 +35,7 @@ while True:
         print('______________________________________')
         print(Fore.GREEN + '-$$$$-  main menu  -$$$$-')
         print(Style.RESET_ALL)
-        print(Fore.LIGHTBLUE_EX + "os is " + guyos)
+        print(Fore.LIGHTBLUE_EX + "os is " + str(guyos))
         print(Fore.MAGENTA + 'version: ' + str(v))
         print(Style.RESET_ALL + '--------------------------------------')
         print('0 | exit')
