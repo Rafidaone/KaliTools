@@ -228,7 +228,7 @@ while True:
                                 time.sleep(1.5)
 
 
-#    put device into monitor mode
+#    put device into maneged mode
         if guy == '6':
                 os.system('sudo airmon-ng')
                 print()
@@ -238,9 +238,12 @@ while True:
                 device = input('└─' + Fore.LIGHTBLUE_EX + '$ ' + Fore.GREEN)
 
                 os.system('airmon-ng stop ' + device)
+#               os.system("sudo service network-manager start
+")
 
 
-                #    put device into maneged mode
+
+                #    put device into monitor mode
         if guy == '5':
 
                         os.system('sudo airmon-ng')
@@ -251,7 +254,7 @@ while True:
                         device = input('└─' + Fore.LIGHTBLUE_EX + '$ ' + Fore.GREEN)
 
                         os.system('airmon-ng start ' + device)
-
+#               
 
 
 #   spam bot
