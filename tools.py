@@ -230,7 +230,7 @@ while True:
 
 #    put device into monitor mode
         if guy == '6':
-                os.system('ifconfig')
+                os.system('sudo airmon-ng')
                 print()
                 print('type the device to put into managed mode, example: wlan1mon')
 
@@ -243,7 +243,7 @@ while True:
                 #    put device into maneged mode
         if guy == '5':
 
-                        os.system('ifconfig')
+                        os.system('sudo airmon-ng')
                         print()
                         print('type the device to put into monitor mode, example: wlan1')
 
