@@ -13,10 +13,9 @@ print(Fore.BLUE + 'code by RafiDEV more at rafidev.net' + Style.RESET_ALL)
 #cheks what os is the script ran in
 
 if platform == "linux" or platform == "linux2":
-        print("Linux")
+        guyos = "Linux"
 #cheks if ran as root
         if os.geteuid() != 0:
-
                 print(Fore.RED + 'warning not runing as root!')
                 print(Style.RESET_ALL)
 
@@ -27,7 +26,7 @@ elif platform == "win32":
         guyos = "Windows"
         print(Fore.RED + 'this script isent made for windows and most functions wont work!')
 
-v = 3
+v = 2
 
 
 #this is the main menu
