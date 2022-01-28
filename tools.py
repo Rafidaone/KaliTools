@@ -15,9 +15,9 @@ print(Fore.BLUE + 'code by RafiDEV more at rafidev.net' + Style.RESET_ALL)
 if platform == "linux" or platform == "linux2":
         guyos = "Linux"
 #cheks if ran as root
-        if os.geteuid() != 0:
-                print(Fore.RED + 'warning not runing as root!')
-                print(Style.RESET_ALL)
+#       if os.geteuid() != 0:
+ #               print(Fore.RED + 'warning not runing as root!')
+  #              print(Style.RESET_ALL)
 
 if platform == "darwin":
         guyos = "Mac OS"
@@ -26,7 +26,7 @@ elif platform == "win32":
         guyos = "Windows"
         print(Fore.RED + 'this script isent made for windows and most functions wont work!')
 
-v = 2
+v = 4
 
 
 #this is the main menu
@@ -35,6 +35,12 @@ while True:
         print(Fore.GREEN + '-$$$$-  main menu  -$$$$-')
         print(Style.RESET_ALL)
         print(Fore.LIGHTBLUE_EX + "os is " + str(guyos))
+        
+        #cheks if ran as root
+        if not guyos == 'Windows':
+               if os.geteuid() != 0:
+                         print(Fore.RED + 'warning not runing as root!' + Style.RESET_ALL)
+
         print(Fore.MAGENTA + 'version: ' + str(v))
         print(Style.RESET_ALL + '--------------------------------------')
         print('0 | exit')
@@ -228,7 +234,7 @@ while True:
                                 time.sleep(1.5)
 
 
-#    put device into maneged mode
+#    put device into monitor mode
         if guy == '6':
                 os.system('sudo airmon-ng')
                 print()
@@ -238,12 +244,9 @@ while True:
                 device = input('└─' + Fore.LIGHTBLUE_EX + '$ ' + Fore.GREEN)
 
                 os.system('airmon-ng stop ' + device)
-#               os.system("sudo service network-manager start
-")
 
 
-
-                #    put device into monitor mode
+                #    put device into maneged mode
         if guy == '5':
 
                         os.system('sudo airmon-ng')
@@ -254,7 +257,7 @@ while True:
                         device = input('└─' + Fore.LIGHTBLUE_EX + '$ ' + Fore.GREEN)
 
                         os.system('airmon-ng start ' + device)
-#               
+
 
 
 #   spam bot
